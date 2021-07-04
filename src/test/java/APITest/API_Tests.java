@@ -4,6 +4,8 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import static org.testng.Assert.*;
+
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import utilities.ConfigurationReader;
@@ -29,6 +31,12 @@ public class API_Tests {
      */
     @Test
     public void BookStoreTest(){
+
+        /*Book_Pojo bookPojo = new Book_Pojo();
+        System.out.println("bookPojo.toString() = " + bookPojo.toString());
+        System.out.println("bookPojo.getId() = " + bookPojo.getId());
+        Assert.assertTrue(bookPojo.getId()=="null");*/
+
 
         response = given().accept(ContentType.JSON)
                 .when().get(baseURI + "/api/books/");
@@ -139,7 +147,7 @@ public class API_Tests {
     @Test
     public void DuplicateBookTest(){
 
-        
+
 
     }
 }
